@@ -7,7 +7,9 @@ columns = ['cap-shape', 'cap-surface', 'cap-color', 'bruises', 'odor',
            'stalk-color-below-ring', 'veil-color', 'ring-number',
            'ring-type', 'spore-print-color', 'population', 'habitat']
 
-cap_shape = [0, 5, 2, 3, 4, 1]  # ['x', 'b', 's', 'f', 'k', 'c']
+cap_shape = {0: 'convex', 5: 'bell', 2: 'sunken', 3: 'flat', 4: 'knobbed',
+             1: 'conical'}  # ['x', 'b', 's', 'f', 'k', 'c']
+
 cap_surface = [2, 0, 3, 1]  # ['s', 'y', 'f', 'g']
 cap_color = [8, 3, 4, 2, 9, 7, 0, 1, 6, 5]  # ['n', 'y', 'w', 'g', 'e', 'p', 'b', 'u', 'c', 'r']
 bruises = [0, 1]  # ['t', 'f']
