@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>mushroomUI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Edit-Form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Login-Form-Clean.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Navigation-with-Button.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/styles.css') }}">
+</head>
+
+<body style="background: #f3f7f9;">
+    <section>
+        <!-- Start: Navigation with Button -->
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+            <div class="container"><a class="navbar-brand" href="#">Mushroom Classification</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"></li>
+                    </ul><button class="btn btn-primary" type="button" style="background: var(--blue);border-width: 0px;border-radius: 8px;">Random</button><span class="navbar-text actions"> </span>
+                </div>
+            </div>
+        </nav><!-- End: Navigation with Button -->
+    </section>
+    <div class="border rounded-0 shadow" style="margin-top: 136px;background: var(--white);width: 90%;margin-right: 5%;margin-left: 5%;margin-bottom: 20px;padding: 20px;transform: translate(0px);filter: brightness(100%);">
+        <form>
+            <!-- Start: 1 Row 3 Columns -->
+            <div class="container" style="margin-top: 0px;margin-bottom: 20px;">
+                <div class="form-row">
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;border-radius: 0px;border-right-width: 0.4px;border-right-style: none;">
+                        <div style="width: 23em;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 28px;line-height: 17px;text-align: justify;font-weight: bold;font-style: normal;" title="Cap Shape of the mushroom"><strong>Cap-Shape:</strong></label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="cap-shape">
+                            {% for val in cap_shape %}
+                            <option>{{ val }}</option>
+                            {% endfor %}
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 88px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Cap-Surface:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="cap-surface">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Cap-Color:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                </div>
+            </div><!-- End: 1 Row 3 Columns -->
+            <!-- Start: 1 Row 3 Columns -->
+            <div class="container" style="margin-top: 0px;margin-bottom: 20px;">
+                <div class="form-row">
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Bruises:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="bruises">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Odour:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 94px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Gill-attachment:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                </div>
+            </div><!-- End: 1 Row 3 Columns -->
+            <!-- Start: 1 Row 3 Columns -->
+            <div class="container" style="margin-top: 0px;margin-bottom: 20px;">
+                <div class="form-row">
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Gill-spacing:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="gill-spacing">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Gill-size:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Gill-colour:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                </div>
+            </div><!-- End: 1 Row 3 Columns -->
+            <!-- Start: 1 Row 3 Columns -->
+            <div class="container" style="margin-top: 0px;margin-bottom: 20px;">
+                <div class="form-row">
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 23em;"><label data-toggle="tooltip" data-bss-tooltip="" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 88px;height: 45px;line-height: 17px;text-align: center;font-weight: bold;font-style: normal;margin-top: 3px;padding-top: 0px;" title="Cap Shape of the mushroom">Stalk-shape:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="stalk-shape">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 88px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Stalk-root:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label class="text-left d-inline-block" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 28px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;padding-top: 3px;">Stalk-surface above-ring:</label><select class="bg-white border rounded-0 custom-select d-inline-block" style="width: 70%;margin-left: 1%;margin-top: -12px;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                </div>
+            </div><!-- End: 1 Row 3 Columns -->
+            <!-- Start: 1 Row 3 Columns -->
+            <div class="container" style="margin-top: 0px;margin-bottom: 20px;">
+                <div class="form-row">
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 23em;"><label class="d-inline-block" data-toggle="tooltip" data-bss-tooltip="" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 28px;line-height: 17px;text-align: justify;font-weight: bold;font-style: normal;margin-top: 0px;padding-top: 2px;" title="Cap Shape of the mushroom">Stalk-surface below ring:</label><select class="bg-white border rounded-0 custom-select d-inline-block" style="width: 70%;margin-left: 1%;padding-bottom: 0px;margin-bottom: 0px;margin-top: -15px;padding-top: 0px;" name="stalk-surface-below-ring">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label class="d-inline-block" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 88px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Stalk-color above ring:</label><select class="bg-white border rounded-0 custom-select d-inline-block" style="width: 70%;margin-left: 1%;margin-top: -11px;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label class="d-inline-block" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Stalk-color below ring:</label><select class="bg-white border rounded-0 custom-select d-inline-block" style="width: 70%;margin-left: 1%;margin-top: -12px;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                </div>
+            </div><!-- End: 1 Row 3 Columns -->
+            <!-- Start: 1 Row 3 Columns -->
+            <div class="container" style="margin-top: 0px;margin-bottom: 20px;">
+                <div class="form-row">
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 23em;"><label data-toggle="tooltip" data-bss-tooltip="" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 28px;line-height: 17px;text-align: justify;font-weight: bold;font-style: normal;" title="Cap Shape of the mushroom">Veil-color:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="veil-color">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 88px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Ring-Number:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Ring-Type:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                </div>
+            </div><!-- End: 1 Row 3 Columns -->
+            <!-- Start: 1 Row 3 Columns -->
+            <div class="container" style="margin-top: 0px;margin-bottom: 20px;">
+                <div class="form-row">
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 23em;"><label class="d-inline-block" data-toggle="tooltip" data-bss-tooltip="" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 28px;line-height: 17px;text-align: justify;font-weight: bold;font-style: normal;" title="Cap Shape of the mushroom">Spore-print colour:</label><select class="bg-white border rounded-0 custom-select d-inline-block" style="width: 70%;margin-left: 1%;margin-top: -12px;" name="spore-print-color">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 88px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Population:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
+                        <div style="width: 100%;"><label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Habitat:</label><select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;">
+                                <optgroup label="This is a group">
+                                    <option value="12" selected="">This is item 1</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </optgroup>
+                            </select></div>
+                    </div>
+                </div>
+            </div><!-- End: 1 Row 3 Columns -->
+            <div class="container">
+                <div style="margin-top: 27px;margin-right: 98px;">
+                    <div class="btn-group shadow-lg" role="group" data-bss-hover-animate="pulse" style="margin-left: 86%;"><button class="btn btn-primary border-white" type="submit" style="border-radius: 4px;background: rgb(5,90,218);color: var(--white);font-weight: bold;font-style: normal;border: 0px hidden rgba(0,0,0,0.1);border-right: 1px solid var(--blue);margin-right: 17px;">Submit</button><button class="btn btn-primary" type="button" style="border-radius: 3px;padding-left: 15.2px;padding-right: 19.2px;margin-left: 0px;color: var(--white);background: #0069d9;font-weight: bold;height: 45.6px;padding-top: 0px;padding-bottom: 0px;margin-top: 0px;margin-right: 5px;border-width: 0px;border-right-width: 0px;border-right-style: none;">Reset</button></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+</body>
+
+</html>
