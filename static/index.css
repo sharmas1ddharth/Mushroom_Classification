@@ -1,0 +1,41 @@
+body{
+    background: #f3f7f9;
+}
+
+.random_button{
+    background: var(--blue);
+    border-width: 0px;
+    border-radius: 8px;
+}
+
+.cap_shape_label {
+    letter-spacing: 0px;
+    font-size: 25px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-left: 8px;
+    width: 82px;
+    height: 28px;
+    line-height: 17px;
+    text-align: justify;
+    font-weight: 900;
+}
+
+.cap_shape_select{
+    width: 70%;
+    margin-left: 1%;
+}
+
+.cap_surface_label{
+    letter-spacing: 0px;
+    font-size: 25px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-left: 8px;
+    width: 88px;
+    height: 36px;
+    line-height: 18px;
+    text-align: justify;
+    font-weight: bold;
+    font-style: normal;
+}
