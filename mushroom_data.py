@@ -8,8 +8,6 @@ columns = {'cap-shape', 'cap-surface', 'cap-color', 'bruises', 'odor',
            'stalk-color-below-ring', 'veil-color', 'ring-number',
            'ring-type', 'spore-print-color', 'population', 'habitat'}
 
-d = pd.read_csv('C:\\Users\\Siddharth\\Desktop\\Github Projects\\Mushroom_Classification\\data\\raw\\mushrooms.csv')
-p = pd.read_csv('C:\\Users\\Siddharth\\Desktop\\Github Projects\\Mushroom_Classification\\data\\processed\\X_train.csv')
 
 cap_shape = {0: 'convex', 5: 'bell', 2: 'sunken', 3: 'flat', 4: 'knobbed', 1: 'conical'}
 # ['x', 'b', 's', 'f', 'k','c']

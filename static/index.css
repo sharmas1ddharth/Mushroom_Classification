@@ -39,3 +39,8 @@ body{
     font-weight: bold;
     font-style: normal;
 }
+
+.cap_surface_select{
+    width: 70%;
+    margin-left: 1%;
+}

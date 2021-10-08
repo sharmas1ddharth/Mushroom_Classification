@@ -1,11 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import mushroom_data as md
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def main():
+    if request.method == 'POST':
+        collected_values = collect_form_values()
+
     return render_template('index.html',
                            cap_shape=md.cap_shape,
                            cap_surface=md.cap_surface,
@@ -27,15 +30,30 @@ def main():
                            ring_type=md.ring_type,
                            spore_print_color=md.spore_print_color,
                            population=md.population,
-                           habitat=md.habitat
+                           habitat=md.habitat,
                            )
 
 
-#TODO: function to collect form values
-#TODO: prdict function
-#TODO: show predicition in the web page
-#TODO: make random button work
+def collect_form_values():
+    mushroom_values = [request.form.get('cap-shape'), request.form.get('cap-surface'),
+                       request.form.get('cap-color'), request.form.get('bruises'),
+                       request.form.get('odor'), request.form.get('gill-attachment'),
+                       request.form.get('gill-spacing'), request.form.get('gill-size'),
+                       request.form.get('gill-color'), request.form.get('stalk-shape'),
+                       request.form.get('stalk-root'), request.form.get('stalk-surface-above-ring'),
+                       request.form.get('stalk-surface-below-ring'),
+                       request.form.get('stalk-color-above-ring'),
+                       request.form.get('stalk-surface-below-ring'), request.form.get('veil-color'),
+                       request.form.get('ring-number'), request.form.get('ring-type'),
+                       request.form.get('spore-print-colour'), request.form.get('population'),
+                       request.form.get('habitat')]
 
+    return type(mushroom_values)
+
+
+# TODO: prdict function
+# TODO: show predicition in the web page
+# TODO: make random button work
 
 
 if __name__ == '__main__':
