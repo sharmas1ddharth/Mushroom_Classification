@@ -8,6 +8,7 @@ app = Flask(__name__)
 def main():
     if request.method == 'POST':
         collected_values = collect_form_values()
+        print(collected_values)
 
     return render_template('index.html',
                            cap_shape=md.cap_shape,
@@ -45,13 +46,16 @@ def collect_form_values():
                        request.form.get('stalk-color-above-ring'),
                        request.form.get('stalk-surface-below-ring'), request.form.get('veil-color'),
                        request.form.get('ring-number'), request.form.get('ring-type'),
-                       request.form.get('spore-print-colour'), request.form.get('population'),
+                       request.form.get('spore-print-color'), request.form.get('population'),
                        request.form.get('habitat')]
 
-    return type(mushroom_values)
+    return mushroom_values
 
 
-# TODO: prdict function
+def classify_mushroom(values):
+    pass
+
+
 # TODO: show predicition in the web page
 # TODO: make random button work
 
