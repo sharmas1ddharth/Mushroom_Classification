@@ -1,38 +1,69 @@
 from flask import Flask, render_template, request
 import mushroom_data as md
+import random
 
 app = Flask(__name__)
 
 
 @app.route('/', methods=['POST', 'GET'])
 def main():
-    if request.method == 'POST':
-        collected_values = collect_form_values()
-        print(collected_values)
+    if request.method != 'POST':
+        return render_template('index.html',
+                               cap_shape=md.cap_shape,
+                               cap_surface=md.cap_surface,
+                               cap_color=md.cap_color,
+                               bruises=md.bruises,
+                               odor=md.odor,
+                               gill_attachment=md.gill_attachment,
+                               gill_spacing=md.gill_spacing,
+                               gill_size=md.gill_size,
+                               gill_color=md.gill_color,
+                               stalk_shape=md.stalk_shape,
+                               stalk_root=md.stalk_root,
+                               stalk_surface_above_ring=md.stalk_surface_above_ring,
+                               stalk_surface_below_ring=md.stalk_surface_below_ring,
+                               stalk_color_above_ring=md.stalk_color_above_ring,
+                               stalk_color_below_ring=md.stalk_color_below_ring,
+                               veil_color=md.veil_color,
+                               ring_number=md.ring_number,
+                               ring_type=md.ring_type,
+                               spore_print_color=md.spore_print_color,
+                               population=md.population,
+                               habitat=md.habitat,
+                               prediction=None
+                               )
+    else:
+        collected_values = [collect_form_values()]
+        prediction = classify_mushroom(collected_values)
+        if prediction == 1:
+            prediction_value = 'Poisonous'
+        else:
+            prediction_value = 'Edible'
 
-    return render_template('index.html',
-                           cap_shape=md.cap_shape,
-                           cap_surface=md.cap_surface,
-                           cap_color=md.cap_color,
-                           bruises=md.bruises,
-                           odor=md.odor,
-                           gill_attachment=md.gill_attachment,
-                           gill_spacing=md.gill_spacing,
-                           gill_size=md.gill_size,
-                           gill_color=md.gill_color,
-                           stalk_shape=md.stalk_shape,
-                           stalk_root=md.stalk_root,
-                           stalk_surface_above_ring=md.stalk_surface_above_ring,
-                           stalk_surface_below_ring=md.stalk_surface_below_ring,
-                           stalk_color_above_ring=md.stalk_color_above_ring,
-                           stalk_color_below_ring=md.stalk_color_below_ring,
-                           veil_color=md.veil_color,
-                           ring_number=md.ring_number,
-                           ring_type=md.ring_type,
-                           spore_print_color=md.spore_print_color,
-                           population=md.population,
-                           habitat=md.habitat,
-                           )
+        return render_template('index.html',
+                               cap_shape=md.cap_shape,
+                               cap_surface=md.cap_surface,
+                               cap_color=md.cap_color,
+                               bruises=md.bruises,
+                               odor=md.odor,
+                               gill_attachment=md.gill_attachment,
+                               gill_spacing=md.gill_spacing,
+                               gill_size=md.gill_size,
+                               gill_color=md.gill_color,
+                               stalk_shape=md.stalk_shape,
+                               stalk_root=md.stalk_root,
+                               stalk_surface_above_ring=md.stalk_surface_above_ring,
+                               stalk_surface_below_ring=md.stalk_surface_below_ring,
+                               stalk_color_above_ring=md.stalk_color_above_ring,
+                               stalk_color_below_ring=md.stalk_color_below_ring,
+                               veil_color=md.veil_color,
+                               ring_number=md.ring_number,
+                               ring_type=md.ring_type,
+                               spore_print_color=md.spore_print_color,
+                               population=md.population,
+                               habitat=md.habitat,
+                               prediction=prediction_value
+                               )
 
 
 def collect_form_values():
@@ -53,11 +84,9 @@ def collect_form_values():
 
 
 def classify_mushroom(values):
-    pass
+    prediction = md.model.predict(values)
+    return prediction
 
-
-# TODO: show predicition in the web page
-# TODO: make random button work
 
 
 if __name__ == '__main__':

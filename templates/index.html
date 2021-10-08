@@ -29,7 +29,9 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"></li>
                     </ul>
-                    <button class="btn btn-primary random_button" type="button">Random</button>
+                    <a href="https://github.com/sharmas1ddharth/Mushroom_Classification" target="_blank">
+                        <button class="btn btn-primary random_button" type="button">Source Code</button>
+                    </a>
                     <span class="navbar-text actions"></span>
                 </div>
             </div>
@@ -40,14 +42,16 @@
     </section>
     <div class="border rounded-0 shadow form-start">
         <form method="post">
+
             <!-- Start: 1 Row 3 Columns -->
-            <div class="container first-row">
+            <div class="container row-div">
                 <div class="form-row">
+
                 <!--Start: First Column-->
-                    <div class="col-md-4 text-center first-row-first-column">
-                        <div class="cap-shape-div">
-                            <label class="cap_shape_label"><strong>Cap-Shape:</strong></label>
-                            <select class="bg-white border rounded-0 custom-select cap_shape_select" name="cap-shape">
+                    <div class="col-md-4 text-center rows-styling first-row-first-column">
+                        <div class="columns">
+                            <label class="rows-label cap-shape-label label-width-82"><strong>Cap-Shape:</strong></label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="cap-shape">
                                 {% for key, val in cap_shape.items() %}
                                     <option value="{{key}}">{{ val }}</option>
                                 {% endfor %}
@@ -57,10 +61,12 @@
 
                     <!--Start: Second Column-->
 
-                    <div class="col-md-4 text-center first-row-second-column">
-                        <div class="cap-surface-div">
-                            <label class="cap_shape_label">Cap-Surface:</label>
-                            <select class="bg-white border rounded-0 custom-select cap_surface_select" name="cap-surface">
+                    <div class="col-md-4 text-center first-row first-row-columns">
+                        <div class="columns">
+                            <label class="rows-label cap_surface_label other-label-styling label-width-88">
+                                <strong>Cap-Surface:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="cap-surface">
                                 {% for key, val in cap_surface.items() %}
                                     <option value="{{key}}">{{ val }}</option>
                                 {% endfor %}
@@ -70,10 +76,12 @@
 
                     <!--Start: Third Column-->
 
-                    <div class="col-md-4 text-center first-row-third-column">
-                        <div style="width: 100%;">
-                            <label class="cap-color-label">Cap-Color:</label>
-                            <select class="bg-white border rounded-0 custom-select cap-color-select" name="cap-color">
+                    <div class="col-md-4 text-center first-row first-row-columns">
+                        <div class="columns">
+                            <label class="cap-color-label rows-label other-label-styling label-width-82">
+                                <strong>Cap-Color:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="cap-color">
                                 {% for key, val in cap_color.items() %}
                                     <option value="{{key}}">{{ val }}</option>
                                 {% endfor %}
@@ -85,69 +93,86 @@
             <!-- End: 1 Row 3 Columns -->
 
             <!-- Start: 2 Row 3 Columns -->
-            <div class="container second-row">
+            <div class="container row-div">
                 <div class="form-row">
                     <!-- Start: First Column -->
-                    <div class="col-md-4 text-center second-row-first-column">
-                        <div style="width: 100%;">
-                            <label class="bruises-label">Bruises:</label>
-                            <select class="bg-white border rounded-0 custom-select bruises-select" name="bruises">
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="rows-label bruises-label other-label-styling label-width-82">
+                                <strong>Bruises:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="bruises">
                                 {% for key, val in bruises.items() %}
                                     <option value="{{key}}">{{ val }}</option>
                                 {% endfor %}
                             </select>
                         </div>
                     </div>
+
                     <!-- Start: Second Column -->
-                    <div class="col-md-4 text-center second-row-second-column">
-                        <div style="width: 100%;">
-                            <label class="odor-label">Odor:</label>
-                            <select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="odor">
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="odor-label rows-label other-label-styling label-width-82">
+                                <strong>Odor:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="odor">
                                 {% for key, val in odor.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 100%;">
-                            <label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 94px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Gill-attachment:</label>
-                            <select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="gill-attachment">
+
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="gill-attachment-label rows-label other-label-styling">
+                                <strong>Gill-attachment:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="gill-attachment">
                                 {% for key, val in gill_attachment.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
+
                 </div>
-            </div><!-- End: 1 Row 3 Columns -->
-            <!-- Start: 1 Row 3 Columns -->
-            <div class="container" style="margin-top: 0px;margin-bottom: 20px;">
+            </div>
+
+            <!-- End: 2 Row 3 Columns -->
+            <!-- Start: 3 Row 3 Columns -->
+
+            <div class="container row-div">
                 <div class="form-row">
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 100%;">
-                            <label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Gill-spacing:</label>
-                            <select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="gill-spacing">
+
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="third-row-label rows-label"><strong>Gill-spacing:</strong></label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="gill-spacing">
                                 {% for key, val in gill_spacing.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 100%;">
-                            <label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Gill-size:</label>
-                            <select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="gill-size">
+
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="third-row-label rows-label"><strong>Gill-size:</strong></label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="gill-size">
                                 {% for key, val in gill_size.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 100%;">
-                            <label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Gill-color:</label>
-                            <select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="gill-color">
+
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="gill-color-label rows-label other-label-styling label-width-82">
+                                <strong>Gill-color:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="gill-color">
                                 {% for key, val in gill_color.items() %}
                             <option value="{{key}}">{{ val }}</option>
                             {% endfor %}
@@ -155,142 +180,188 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- End: 1 Row 3 Columns -->
-            <!-- Start: 1 Row 3 Columns -->
-            <div class="container" style="margin-top: 0px;margin-bottom: 20px;">
+            </div>
+
+            <!-- End: 3 Row 3 Columns -->
+            <!-- Start: 4 Row 3 Columns -->
+
+            <div class="container row-div">
                 <div class="form-row">
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 23em;">
-                            <label data-toggle="tooltip" data-bss-tooltip="" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 88px;height: 45px;line-height: 17px;text-align: center;font-weight: bold;font-style: normal;margin-top: 3px;padding-top: 0px;" title="Cap Shape of the mushroom">Stalk-shape:</label>
-                            <select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="stalk-shape">
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="stalk-shape-label rows-label label-width-88">
+                                <strong>Stalk-shape:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="stalk-shape">
                                 {% for key, val in stalk_shape.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 100%;">
-                            <label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 88px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Stalk-root:</label>
-                            <select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="stalk-root">
+
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="stalk-root-label rows-label other-label-styling label-width-88">
+                                <strong>Stalk-root:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="stalk-root">
                                 {% for key, val in stalk_root.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 100%;">
-                            <label class="text-left d-inline-block" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 28px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;padding-top: 3px;">Stalk-surface above-ring:</label>
-                            <select class="bg-white border rounded-0 custom-select d-inline-block" style="width: 70%;margin-left: 1%;margin-top: -12px;" name="stalk-surface-above-ring">
+
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="text-left d-inline-block rows-label stalk-surface-above-ring-label label-width-82">
+                                <strong>Stalk-surface above-ring:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select d-inline-block select-box stalk-surface-above-ring-select-box" name="stalk-surface-above-ring">
                                 {% for key, val in stalk_surface_above_ring.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
+
                 </div>
-            </div><!-- End: 1 Row 3 Columns -->
-            <!-- Start: 1 Row 3 Columns -->
-            <div class="container" style="margin-top: 0px;margin-bottom: 20px;">
+            </div>
+
+            <!-- End: 4 Row 3 Columns -->
+            <!-- Start: 5 Row 3 Columns -->
+
+            <div class="container row-div">
                 <div class="form-row">
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 23em;">
-                            <label class="d-inline-block" data-toggle="tooltip" data-bss-tooltip="" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 28px;line-height: 17px;text-align: justify;font-weight: bold;font-style: normal;margin-top: 0px;padding-top: 2px;" title="Cap Shape of the mushroom">Stalk-surface below ring:</label>
-                            <select class="bg-white border rounded-0 custom-select d-inline-block" style="width: 70%;margin-left: 1%;padding-bottom: 0px;margin-bottom: 0px;margin-top: -15px;padding-top: 0px;" name="stalk-surface-below-ring">
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="d-inline-block stalk-surface-below-ring-label rows-label label-width-82">
+                                <strong>Stalk-surface below ring:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select d-inline-block stalk-surface-below-ring-select-box select-box" name="stalk-surface-below-ring">
                                 {% for key, val in stalk_surface_below_ring.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 100%;">
-                            <label class="d-inline-block" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 88px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Stalk-color above ring:</label>
-                            <select class="bg-white border rounded-0 custom-select d-inline-block" style="width: 70%;margin-left: 1%;margin-top: -11px;" name="stalk-color-above-ring">
+
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="d-inline-block stalk-color-above-ring-label rows-label other-label-styling label-width-88">
+                                <strong>Stalk-color above ring:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select d-inline-block select-box stalk-color-above-ring-select-box" name="stalk-color-above-ring">
                                 {% for key, val in stalk_color_above_ring.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 100%;">
-                            <label class="d-inline-block" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Stalk-color below ring:</label>
-                            <select class="bg-white border rounded-0 custom-select d-inline-block" style="width: 70%;margin-left: 1%;margin-top: -12px;" name="stalk-color-below-ring">
+
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="d-inline-block rows-label stalk-color-below-ring-label other-label-styling label-width-82">
+                                <strong>Stalk-color below ring:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select d-inline-block select-box stalk-color-below-ring-select-box" name="stalk-color-below-ring">
                                 {% for key, val in stalk_color_below_ring.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
+
                 </div>
-            </div><!-- End: 1 Row 3 Columns -->
-            <!-- Start: 1 Row 3 Columns -->
-            <div class="container" style="margin-top: 0px;margin-bottom: 20px;">
+            </div>
+
+            <!-- End: 5 Row 3 Columns -->
+            <!-- Start: 6 Row 3 Columns -->
+
+            <div class="container row-div">
                 <div class="form-row">
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 23em;">
-                            <label data-toggle="tooltip" data-bss-tooltip="" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 28px;line-height: 17px;text-align: justify;font-weight: bold;font-style: normal;" title="Cap Shape of the mushroom">Veil-color:</label>
-                            <select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="veil-color">
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="veil-color-label rows-label label-width-82">
+                                <strong>Veil-color:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="veil-color">
                                 {% for key, val in veil_color.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 100%;">
-                            <label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 88px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Ring-Number:</label>
-                            <select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="ring-number">
+
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="ring-number-label rows-label other-label-styling label-width-88">
+                                <strong>Ring-Number:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="ring-number">
                                 {% for key, val in ring_number.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 100%;">
-                            <label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Ring-Type:</label>
-                            <select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="ring-type">
+
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="rows-label ring-type-label other-label-styling label-width-82">
+                                <strong>Ring-Type:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="ring-type">
                                 {% for key, val in ring_type.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
                 </div>
-            </div><!-- End: 1 Row 3 Columns -->
-            <!-- Start: 1 Row 3 Columns -->
-            <div class="container" style="margin-top: 0px;margin-bottom: 20px;">
+            </div>
+
+            <!-- End: 6 Row 3 Columns -->
+            <!-- Start: 7 Row 3 Columns -->
+
+            <div class="container row-div">
                 <div class="form-row">
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 23em;">
-                            <label class="d-inline-block" data-toggle="tooltip" data-bss-tooltip="" style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 82px;height: 28px;line-height: 17px;text-align: justify;font-weight: bold;font-style: normal;" title="Cap Shape of the mushroom">Spore-print colour:</label>
-                            <select class="bg-white border rounded-0 custom-select d-inline-block" style="width: 70%;margin-left: 1%;margin-top: -12px;" name="spore-print-color">
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="d-inline-block rows-label spore-print-color-label label-width-82">
+                                <strong>Spore-print colour:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select d-inline-block select-box" name="spore-print-color">
                                 {% for key, val in spore_print_color.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 100%;">
-                            <label style="letter-spacing: 0px;font-size: 25px;margin-right: 0px;margin-left: 0px;padding-left: 8px;width: 88px;height: 36px;line-height: 18px;text-align: justify;font-weight: bold;font-style: normal;">Population:</label>
-                            <select class="bg-white border rounded-0 custom-select" style="width: 70%;margin-left: 1%;" name="population">
+
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="rows-label population-label other-label-styling label-width-88">
+                                <strong>Population:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="population">
                                 {% for key, val in population.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center" style="width: 2%;margin: 1%;padding-right: 0px;padding-left: 0px;margin-right: -13.8px;padding-top: 10px;">
-                        <div style="width: 100%;">
-                            <label class="habitat-label">Habitat:</label>
-                            <select class="bg-white border rounded-0 custom-select habitat-select" name="habitat">
+
+                    <div class="col-md-4 text-center rows-styling">
+                        <div class="columns">
+                            <label class="habitat-label rows-label other-label-styling label-width-82">
+                                <strong>Habitat:</strong>
+                            </label>
+                            <select class="bg-white border rounded-0 custom-select select-box" name="habitat">
                                 {% for key, val in habitat.items() %}
-                            <option value="{{key}}">{{ val }}</option>
-                            {% endfor %}
+                                    <option value="{{key}}">{{ val }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
@@ -303,7 +374,17 @@
                 <div class="button-group-div">
                     <div class="btn-group shadow-lg button-group" role="group" data-bss-hover-animate="pulse">
                         <button class="btn btn-primary border-white submit-button" type="submit">Submit</button>
-                        <button class="btn btn-primary reset-button" type="button">Reset</button></div>
+                        {% if prediction == None %}
+                            <button class="btn btn-primary reset-button" type="button" disabled>Show Answer</button>
+
+                        {% else %}
+                            <div id="overlay" onclick="off()">
+                                <div id="text" onclick="off()">{{prediction}}</div>
+                            </div>
+                            <button class="btn btn-primary reset-button" type="button" onclick="on()">Show Answer</button>
+
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </form>
@@ -311,6 +392,15 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script>
+        function on() {
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+</script></script>
 </body>
 
 </html>
